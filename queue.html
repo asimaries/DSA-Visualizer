@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylequeue.css">
+    <title>QUEUE</title>
+</head>
+
+<body>
+    <header>
+        <h1>QUEUE</h1>
+    </header>
+    <section>
+        <ul id="canvas">
+            <li>
+                <div class="arrow" hidden></div>
+                <div class="ele">87</div>
+            </li>
+            <li>
+                <div class="arrow"></div>
+                <div class="ele">23</div>
+            </li>
+            <li>
+                <div class="arrow"></div>
+                <div class="ele">34</div>
+            </li>
+        </ul>
+        <div id="control">
+            <button type="submit" onclick="push()">PUSH</button>
+            <input type="text">
+            <br><br>
+            <button type="button" onclick="pop()">POP</button>
+            <br><br>
+            <label for="top">fornt:</label>
+            <span id="frontval">87</span>
+            <br>
+            <label for="top">back:</label>
+            <span id="backval">34</span>
+            <div>
+                Size:
+                <span id="size">3</span>
+            </div>
+            <div>ERROR:<span id="error"></span></div>
+            <div>SET SIZE: <input type="text" value="15"></div>
+        </div>
+    </section>
+
+    <script src="scriptqueue.js"></script>
+</body>
+
+</html>

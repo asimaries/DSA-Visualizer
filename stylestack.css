@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    border: none;
+}
+
+section {
+    margin: auto;
+    display: flex;
+    width: 90%;
+}
+
+#canvas {
+    width: 50%;
+    height: 700px;
+    background-color: #ccc;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column-reverse;
+}
+
+#control {
+
+    width: 50%;
+    background-color: #222;
+}
+
+li {
+    font-size: 30px;
+    text-align: center;
+    color: black;
+    transition: all;
+    margin: 13px 50px;
+    outline: 5px black;
+    outline-style: solid;
+    border-radius: 15px;
+    height: 40px;
+    list-style: none;
+    transition: ease-in 1s;
+}
+
+button {
+    background-color: #111
+}
+
+input {
+    background-color: white;
+    color: black;
+}
+
+#error {
+    color: red;
+}

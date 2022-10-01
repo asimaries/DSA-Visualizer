@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    border: none;
+}
+
+body {
+    background-color: #111;
+}
+
+header {
+    text-align: center;
+    background-color: #111;
+}
+
+#canvas {
+    margin: auto;
+    height: 400px;
+    width: 90%;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+}
+
+#control {
+    margin: auto;
+    height: 300px;
+    width: 90%;
+    background-color: #222;
+}
+
+.ele {
+    font-size: 30px;
+    text-align: center;
+    color: black;
+    transition: all;
+    margin: 5px;
+    outline: 5px black;
+    outline-style: solid;
+    border-radius: 15px;
+    min-width: 50px;
+    height: 50px;
+    list-style: none;
+}
+
+#control * {
+    height: 35px;
+    /* width: */
+    /* border-radius:; */
+}
+
+li:first-child {
+    margin-left: 3%;
+}
+
+button {
+    background-color: #111
+}
+
+input {
+    background-color: white;
+    color: black;
+}
+
+.arrow {
+    width: 35px;
+    height: 5px;
+    border-radius: 4px 0px 0px 4px;
+    background-color: #000;
+    position: relative;
+}
+
+.arrow::after {
+    background-color: black;
+    content: "";
+    display: inline-block;
+    border-radius: 4px;
+    width: 27px;
+    height: 5px;
+    rotate: -45deg;
+    position: relative;
+    top: -42px;
+    left: -3px;
+}
+
+.arrow::before {
+    background-color: black;
+    content: "";
+    display: inline-block;
+    border-radius: 4px;
+    width: 27px;
+    height: 5px;
+    rotate: 45deg;
+    position: relative;
+    top: -4px;
+    left: -3px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+}
+
+#error {
+    color: red;
+}
