@@ -1,54 +1,72 @@
 * {
-    margin: 0;
-    padding: 0;
-    color: white;
-    border: none;
+	margin: 0;
+	padding: 0;
+	color: white;
+	border: none;
 }
 
 section {
-    margin: auto;
-    display: flex;
-    width: 90%;
+	margin: auto;
+	display: flex;
+	width: 90%;
 }
 
 #canvas {
-    width: 50%;
-    height: 700px;
-    background-color: #ccc;
-    display: flex;
-    /* justify-content: center; */
-    flex-direction: column-reverse;
+	width: 50%;
+	height: 700px;
+	background-color: #ccc;
+	display: flex;
+	text-align: center;
+	flex-direction: column-reverse;
 }
 
 #control {
-
-    width: 50%;
-    background-color: #222;
+	width: 50%;
+	background-color: #222;
 }
 
 li {
-    font-size: 30px;
-    text-align: center;
-    color: black;
-    transition: all;
-    margin: 13px 50px;
-    outline: 5px black;
-    outline-style: solid;
-    border-radius: 15px;
-    height: 40px;
-    list-style: none;
-    transition: ease-in 1s;
+	font-size: 30px;
+	text-align: center;
+    justify-content: center;
+	color: black;
+	transition: all;
+	margin: 13px auto;
+    padding: 5px;
+    padding-top: 3px;
+	outline: 5px black;
+	outline-style: solid;
+	border-radius: 15px;
+	height: 40px;
+	list-style: none;
+    overflow: hidden;
+    max-width: 0;
 }
-
-button {
-    background-color: #111
-}
-
-input {
-    background-color: white;
-    color: black;
+li.show {
+	max-width: 200px;
 }
 
 #error {
-    color: red;
+	color: red;
+}
+.fade li {
+	transition: all ease-out;
+	transition-duration: 1s;
+	opacity: 0;
+}
+.fade li.show {
+	opacity: 1;
+}
+
+button {
+	background-color: #111;
+}
+
+input {
+	background-color: white;
+	color: black;
+}
+
+#error {
+	color: red;
 }

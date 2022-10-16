@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     color: white;
     border: none;
 }
@@ -14,13 +15,15 @@ header {
     background-color: #111;
 }
 
-#canvas {
+.canvas {
+    padding: 3%;
     margin: auto;
     height: 400px;
     width: 90%;
     background-color: #ccc;
     display: flex;
     align-items: center;
+    /* justify-content: space-between  ; */
 }
 
 #control {
@@ -31,6 +34,8 @@ header {
 }
 
 .ele {
+    padding: 5px;
+    padding-top: 3px;
     font-size: 30px;
     text-align: center;
     color: black;
@@ -39,23 +44,18 @@ header {
     outline: 5px black;
     outline-style: solid;
     border-radius: 15px;
-    min-width: 50px;
+    min-width: fit-content;
     height: 50px;
     list-style: none;
+    position: relative;
 }
 
 #control * {
     height: 35px;
-    /* width: */
-    /* border-radius:; */
-}
-
-li:first-child {
-    margin-left: 3%;
 }
 
 button {
-    background-color: #111
+    background-color: #111;
 }
 
 input {
@@ -64,7 +64,7 @@ input {
 }
 
 .arrow {
-    width: 35px;
+    width: 30px;
     height: 5px;
     border-radius: 4px 0px 0px 4px;
     background-color: #000;
@@ -79,9 +79,9 @@ input {
     width: 27px;
     height: 5px;
     rotate: -45deg;
-    position: relative;
-    top: -42px;
-    left: -3px;
+    position: absolute;
+    top: -8px;
+    left: -4px;
 }
 
 .arrow::before {
@@ -92,16 +92,29 @@ input {
     width: 27px;
     height: 5px;
     rotate: 45deg;
-    position: relative;
-    top: -4px;
-    left: -3px;
+    position: absolute;
+    top: 8px;
+    left: -4px;
 }
 
 li {
     display: flex;
     align-items: center;
+    overflow: hidden;
+    max-width: 0;
+}
+li.show {
+    max-width: 200px;
 }
 
 #error {
     color: red;
+}
+.fade li {
+    transition: all ease-out;
+    transition-duration: 1s;
+    opacity: 0;
+}
+.fade li.show {
+    opacity: 1;
 }
