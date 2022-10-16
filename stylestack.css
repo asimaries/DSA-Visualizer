@@ -23,6 +23,10 @@ section {
 #control {
 	width: 50%;
 	background-color: #222;
+	padding: 30px;
+}
+#control *{
+	height: 35px;
 }
 
 li {

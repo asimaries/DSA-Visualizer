@@ -18,7 +18,7 @@ header {
 .canvas {
     padding: 3%;
     margin: auto;
-    height: 400px;
+    height: 350px;
     width: 90%;
     background-color: #ccc;
     display: flex;
@@ -28,7 +28,8 @@ header {
 
 #control {
     margin: auto;
-    height: 300px;
+    padding: 30px;
+    height: 350px;
     width: 90%;
     background-color: #222;
 }

@@ -26,9 +26,9 @@ function pop() {
 	ul.firstElementChild.classList.remove("show");
 	setTimeout(() => {
 		ul.removeChild(ul.firstElementChild);
+		setSIZE();
+		setTop();
 	}, 400);
-	setSIZE();
-	setTop();
 }
 function push() {
 	if (size === 10) {
