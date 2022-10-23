@@ -5,15 +5,97 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comic+Neue"> -->
     <title>DS Visualizer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            border: none;
+            /* font-family: "Comic Neue", sans-serif; */
+            /* font-style: normal;*/
+        }
+
+        html {
+            background-color: #111;
+        }
+
+        header {
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        main {
+            display: flex;
+        }
+
+        body {
+            margin: auto;
+            width: 90%;
+        }
+
+        .card {
+            padding-bottom: 10px;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 1%;
+            width: 50%;
+            height: 50%;
+        }
+        img{
+            max-height: 250px;
+            width: 100%;
+        }
+        footer {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Data Structure Visualizer</h1>
-    <div class="content">
-        <a href="stack.html">STACK</a>
-        <a href="queue.html">QUEUE</a>
-    </div>
+    <header>
+        <h1>Data Structure Visualizer</h1>
+    </header>
+    <main>
+        <div class="card">
+            <a href="stack.html">
+                <div>
+                    <img src="assects/stack.png" alt="--STACK">
+                    <h2>STACK</h2>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="queue.html">
+                <div>
+                    <img src="assects/queue.png" alt="--QUEUE">
+                    <h2>QUEUE</h2>
+                </div>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <p>By GROUP NO. 11</p>
+    </footer>
+    <script>
+        function init() {
+            let height = '' + Number(window.innerHeight * 0.8)
+            document.getElementsByTagName('main')[0].setAttribute("style", "height:" + height + "px");
+        }
+        window.onload = init();
+
+    </script>
 </body>
 
 </html>

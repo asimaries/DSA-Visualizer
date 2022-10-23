@@ -104,6 +104,7 @@ li {
     overflow: hidden;
     max-width: 0;
 }
+
 li.show {
     max-width: 200px;
 }
@@ -111,11 +112,13 @@ li.show {
 #error {
     color: red;
 }
+
 .fade li {
     transition: all ease-out;
     transition-duration: 1s;
     opacity: 0;
 }
+
 .fade li.show {
     opacity: 1;
 }
