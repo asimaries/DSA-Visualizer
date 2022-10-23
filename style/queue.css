@@ -6,32 +6,40 @@
     border: none;
 }
 
-body {
+html {
     background-color: #111;
 }
 
 header {
     text-align: center;
-    background-color: #111;
 }
 
 .canvas {
     padding: 3%;
     margin: auto;
     height: 350px;
-    width: 90%;
     background-color: #ccc;
     display: flex;
     align-items: center;
     /* justify-content: space-between  ; */
 }
 
-#control {
+section {
+    width: 90%;
     margin: auto;
+}
+
+#control {
     padding: 30px;
     height: 350px;
-    width: 90%;
     background-color: #222;
+}
+
+code {
+    background-color: #333;
+    margin-left: 40%;
+    width: 40%;
+    height: 350px;
 }
 
 .ele {
@@ -121,4 +129,11 @@ li.show {
 
 .fade li.show {
     opacity: 1;
+}
+
+code {
+    position: absolute;
+    padding-top: 5%;
+    width: 100%;
+    font-size: 16px;
 }

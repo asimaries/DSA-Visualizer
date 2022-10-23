@@ -1,55 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="stylequeue.css" />
-		<title>QUEUE</title>
-		<style>
-			
-		</style>
-	</head>
 
-	<body>
-		<header>
-			<h1>QUEUE</h1>
-		</header>
-		<section>
-			<ul class="canvas fade">
-				<li class="show">
-					<span class="arrow" hidden></span>
-					<span class="ele">87</span>
-				</li>
-				<li class="show">
-					<span class="arrow"></span>
-					<span class="ele">23</span>
-				</li>
-				<li class="show">
-					<span class="arrow"></span>
-					<span class="ele">34</span>
-				</li>
-			</ul>
-			<div id="control">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="style/queue.css" />
+	<title>QUEUE</title>
+	<style>
+
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>QUEUE</h1>
+	</header>
+	<section>
+		<ul class="canvas fade">
+			<li class="show">
+				<span class="arrow" hidden></span>
+				<span class="ele">87</span>
+			</li>
+			<li class="show">
+				<span class="arrow"></span>
+				<span class="ele">23</span>
+			</li>
+			<li class="show">
+				<span class="arrow"></span>
+				<span class="ele">34</span>
+			</li>
+		</ul>
+		<div id="control">
+			<span width="40%">
 				<button type="submit" onclick="push()">PUSH</button>
 				<input type="text" />
 				<br /><br />
 				<button type="button" onclick="pop()">POP</button>
 				<br /><br />
-				<label for="top">fornt:</label>
+				<label for="top">FRONT:</label>
 				<span id="frontval">87</span>
 				<br />
-				<label for="top">back:</label>
+				<label for="top">REAR:</label>
 				<span id="backval">34</span>
 				<div>
-					Size:
+					SIZE:
 					<span id="size">3</span>
 				</div>
 				<div>ERROR:<span id="error"></span></div>
 				<div>SET SIZE: <input type="text" /></div>
-			</div>
-		</section>
+			</span>
+			<code>
+					safsad
+				</code>
+		</div>
+	</section>
 
-		<script src="scriptqueue.js"></script>
-	</body>
+	<script src="script/queue.js"></script>
+</body>
+
 </html>

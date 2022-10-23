@@ -5,7 +5,18 @@
 	border: none;
 }
 
-section {
+html {
+	background-color: #111;
+}
+
+header {
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main {
 	margin: auto;
 	display: flex;
 	width: 90%;
@@ -13,7 +24,7 @@ section {
 
 #canvas {
 	width: 50%;
-	height: 700px;
+	height: 650px;
 	background-color: #ccc;
 	display: flex;
 	text-align: center;
@@ -22,30 +33,33 @@ section {
 
 #control {
 	width: 50%;
+	/* height: 50%; */
 	background-color: #222;
-	padding: 30px;
+	padding: 3%;
 }
-#control *{
+
+#control * {
 	height: 35px;
 }
 
 li {
 	font-size: 30px;
 	text-align: center;
-    justify-content: center;
+	justify-content: center;
 	color: black;
 	transition: all;
 	margin: 13px auto;
-    padding: 5px;
-    padding-top: 3px;
+	padding: 5px;
+	padding-top: 3px;
 	outline: 5px black;
 	outline-style: solid;
 	border-radius: 15px;
 	height: 40px;
 	list-style: none;
-    overflow: hidden;
-    max-width: 0;
+	overflow: hidden;
+	max-width: 0;
 }
+
 li.show {
 	max-width: 200px;
 }
@@ -53,11 +67,13 @@ li.show {
 #error {
 	color: red;
 }
+
 .fade li {
 	transition: all ease-out;
 	transition-duration: 1s;
 	opacity: 0;
 }
+
 .fade li.show {
 	opacity: 1;
 }
@@ -73,4 +89,13 @@ input {
 
 #error {
 	color: red;
+}
+code{
+	position: absolute;
+	padding-top: 5%;
+	width: 100%;
+	font-size: 16px;
+}
+footer {
+    text-align: center;
 }

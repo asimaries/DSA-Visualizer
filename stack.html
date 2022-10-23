@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STACK</title>
-    <link rel="stylesheet" href="stylestack.css">
+    <link rel="stylesheet" href="style/stack.css">
 </head>
 
 <body>
     <header>
         <h1>STACK</h1>
     </header>
-    <section>
+    <main>
         <span id="canvas">
             <ul class="fade">
                 <li class="show">23</li>
@@ -22,16 +22,26 @@
             </ul>
         </span>
         <span id="control">
-            <input type="text"><button type="button" onclick="push()">
-                PUSH
-            </button><br>
-            <button type="button" onclick="pop()">POP</button>
-            <div id="top">TOP: <span id="topval">23</span></div>
-            <div>SIZE: <span id="size">3</span></div>
-            <div>ERROR:<span id="error"></span></div>
+           
+                <input type="text">
+                <button type="button" onclick="push()">PUSH</button><br>
+                <button type="button" onclick="pop()">POP</button>
+                <div id="top">TOP: <span id="topval">23</span></div>
+                <div>SIZE: <span id="size">3</span></div>
+                <div>ERROR:<span id="error"></span></div>
+                <div>SET SIZE: <input type="text" /></div>
+                <code>
+                    
+                </code>
+            
+           
         </span>
-    </section>
-    <script src="scriptstack.js"></script>
+
+    </main>
+    <footer>
+        <p>By GROUP NO. 11</p>
+    </footer>
+    <script src="script/stack.js"></script>
 </body>
 
 </html>
