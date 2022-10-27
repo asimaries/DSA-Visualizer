@@ -5,10 +5,10 @@ const inp = document.getElementsByTagName("input");
 const queuetype = document.getElementsByName('queuetype');
 const code = document.getElementsByTagName('code')[0];
 const caption = document.getElementById('caption');
-
-let codesstr = {
-	"0": `void enque(Type value=(<span id="value"></span>)) {
-<br>		// <i>cap</i> is capacity of <i>QUEUE</i>
+const tab = `&nbsp;&nbsp;&nbsp;&nbsp;`;
+let codesstr = [
+	`void enque(Type value=(<span id="value"></span>)) {
+<br> ${tab}	// <i>cap</i> is capacity of <i>QUEUE</i>
 <br>        if (size == cap) {
 <br>            return;
 <br>        }
@@ -16,7 +16,7 @@ let codesstr = {
 <br>        arr[(((front + size++ - 1) % cap) + 1) % cap] = x;
 <br>        }
 <br>    }`,
-	"1": `void deque() {
+	`void deque() {
 <br>		// <i>cap</i> is capacity of <i>QUEUE</i>
 <br>		if (size == 0) {
 <br>			return;
@@ -26,7 +26,7 @@ let codesstr = {
 <br>            size--;
 <br>        }
 <br>    }`,
-	"2": `void enque(Type value=(<span id="value"></span>)){
+	`void enque(Type value=(<span id="value"></span>)){
 <br>        Node *new_node = new Node(value);
 <br>        if (head == NULL)
 <br>        {
@@ -41,7 +41,7 @@ let codesstr = {
 <br>        }
 <br>        size++;
 <br>    }`,
-	"3": `void deque()
+	`void deque()
 <br>    {
 <br>        if (head == NULL)
 <br>        {
@@ -55,7 +55,7 @@ let codesstr = {
 <br>            size--;
 <br>        }
 <br>    }`
-}
+]
 let size = 3, usersize = 10;
 let element = `<span class="arrow"></span>
 			<span class="ele"></span>`;
