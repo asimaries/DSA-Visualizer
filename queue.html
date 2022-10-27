@@ -16,45 +16,59 @@
 	<header>
 		<h1>QUEUE</h1>
 	</header>
-	<section>
-		<ul class="canvas fade">
-			<li class="show">
-				<span class="arrow" hidden></span>
-				<span class="ele">87</span>
-			</li>
-			<li class="show">
-				<span class="arrow"></span>
-				<span class="ele">23</span>
-			</li>
-			<li class="show">
-				<span class="arrow"></span>
-				<span class="ele">34</span>
-			</li>
-		</ul>
-		<div id="control">
-			<span width="40%">
-				<button type="submit" onclick="push()">PUSH</button>
-				<input type="text" />
-				<br /><br />
-				<button type="button" onclick="pop()">POP</button>
-				<br /><br />
-				<label for="top">FRONT:</label>
-				<span id="frontval">87</span>
-				<br />
-				<label for="top">REAR:</label>
-				<span id="backval">34</span>
-				<div>
-					SIZE:
-					<span id="size">3</span>
-				</div>
-				<div>ERROR:<span id="error"></span></div>
-				<div>SET SIZE: <input type="text" /></div>
-			</span>
-			<code>
-					safsad
-				</code>
+	<main>
+		<div class="canvas">
+			<ul class="fade">
+				<li class="show">
+					<span class="arrow" hidden></span>
+					<span class="ele">87</span>
+				</li>
+				<li class="show">
+					<span class="arrow"></span>
+					<span class="ele">23</span>
+				</li>
+				<li class="show">
+					<span class="arrow"></span>
+					<span class="ele">34</span>
+				</li>
+			</ul>
 		</div>
-	</section>
+
+		<div class="control">
+			<span class="controlchild" style="width: 7%; padding-right:0;">
+				<button type="submit" onclick="push()">PUSH</button><br>
+				<button type="button" onclick="pop()">POP</button><br>
+				<label for="top">FRONT:</label><br>
+				<label for="top">REAR: </label><br>
+				<span>SIZE:</span><br>
+				<span>ERROR: </span><br>
+				<span>SET SIZE: </span>
+			</span>
+			<span style="padding:2em;  padding-left:0">
+				<input type="text" style="margin-bottom: 4em;" /><br>
+				<span id="frontval">87</span><br>
+				<span id="backval">34</span><br>
+				<span id="size">3</span><br>
+				<span id="error"></span>
+				<input type="text" style="margin-top: 1em;" />
+			</span>
+			<span class="controlchild " style="margin-left: 20%;">
+				<label for="array">
+					<input type="radio" name="queuetype" id="array" checked="checked">
+					Array
+				</label>
+				<label for="linkedlist">
+					<input type="radio" name="queuetype" id="linkedlist">
+					Linked List
+				</label><br>
+				<code>---</code>
+			</span>
+		</div>
+	</main>
+	<footer>
+		<h4>STATUS:&nbsp;</h4>
+		<span id="caption">---</span>
+	</footer>
 
 	<script src="script/queue.js"></script>
 </body>

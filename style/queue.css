@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     color: white;
     border: none;
 }
@@ -17,30 +16,33 @@ header {
 .canvas {
     padding: 3%;
     margin: auto;
-    height: 350px;
+    height: 200px;
     background-color: #ccc;
     display: flex;
     align-items: center;
-    /* justify-content: space-between  ; */
 }
 
-section {
+ul {
+    display: flex;
+}
+
+main {
     width: 90%;
     margin: auto;
 }
 
-#control {
-    padding: 30px;
-    height: 350px;
-    background-color: #222;
+.control {
+    background-color: #333;
+    height: fit-content;
+    display: flex;
+    font-weight: bold;
 }
 
-code {
-    background-color: #333;
-    margin-left: 40%;
-    width: 40%;
-    height: 350px;
+.controlchild {
+    width: 50%;
+    padding: 30px;
 }
+
 
 .ele {
     padding: 5px;
@@ -54,24 +56,27 @@ code {
     outline-style: solid;
     border-radius: 15px;
     min-width: fit-content;
-    height: 50px;
     list-style: none;
     position: relative;
 }
 
-#control * {
-    height: 35px;
-}
 
 button {
     background-color: #111;
+    border-radius: 10rem;
+    height: 2rem;
+    width: 5rem;
+    margin: .5em 0em;
 }
 
-input {
+input[type=text] {
     background-color: white;
     color: black;
+    border-radius: 10px;
+    height: 2rem;
+    width: 10rem;
+    margin-top: .3em;
 }
-
 .arrow {
     width: 30px;
     height: 5px;
@@ -131,9 +136,12 @@ li.show {
     opacity: 1;
 }
 
-code {
-    position: absolute;
-    padding-top: 5%;
-    width: 100%;
-    font-size: 16px;
+
+footer{
+    margin: auto;
+    width: 90%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
