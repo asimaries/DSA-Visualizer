@@ -47,8 +47,19 @@ button {
     width: 5rem;
     margin: .5em 0em;
 }
-
+button:hover{
+    transition: 500ms;
+    background-color: #fff;
+    color: #111;
+}
 input[type=text] {
+	background-color: white;
+    color: black;
+    border-radius: 10px;
+    height: 2rem;
+    width: 10rem;
+}
+input[type=number] {
 	background-color: white;
     color: black;
     border-radius: 10px;
@@ -131,4 +142,11 @@ h3{
 mark{
 	background-color: #ffffffaf;
 	color: red;
+}
+img{
+	width: 20px;
+}
+#homepage{
+	position: absolute;
+	left: 15px;
 }
