@@ -23,8 +23,9 @@ a {
     text-decoration: none;
 }
 
-main {
+section {
     display: flex;
+    height: 40%;
 }
 
 body {
@@ -33,18 +34,19 @@ body {
 }
 
 .card {
-    padding-bottom: 10px;
     background-color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 1%;
-    width: 50%;
-    height: 50%;
+    margin:0 auto;
+    width: 40%;
+    height: 100%;
+    border-radius: 2rem;
+    /* position: relative; */
 }
 img{
-    max-height: 250px;
+    max-height: 200px;
     width: 100%;
 }
 footer {
