@@ -2,41 +2,90 @@ let size = 3, usersize = 9;
 const inp = document.getElementsByTagName("input");
 const ul = document.getElementById("canvas").firstElementChild;
 const siz = document.getElementById("size");
+const queuetype = document.getElementsByName('queuetype');
 const code = document.getElementsByTagName('code')[0];
-
+const caption = document.getElementById('caption');
+const tab = `&nbsp;&nbsp;&nbsp;&nbsp;`;
+let codesstr = [
+	`void push(Type value=(<mark id="value"></mark>))
+    {
+        if (top == cap - 1)
+        {
+            cout << "Overflow " << x << " cannot be push\n";
+        }
+        else
+        {
+            arr[++top] = x;
+        }
+    }`,
+	`void pop()
+    {
+        if (top == -1)
+        {
+            cout << "underflow\n";
+        }
+        else
+        {
+            arr[top--] = 0;
+        }
+    }`,
+	` void push(Type value=(<mark id="value"></mark>))
+    {
+        Node *new_node = new Node(x);
+        if (head == NULL)
+        {
+            head = new_node;
+        }
+        else
+        {
+            new_node->next = head;
+            head = new_node;
+        }
+        size++;
+    }`,
+	`void pop()
+    {
+        if (size == 0 && head == NULL)
+        {
+            cout << "underflow: stack is empty ";
+            return 0;
+        }
+        else
+        {
+            Node *temp = head;
+            head = head->next;
+            delete temp;
+            size--;
+        }
+    }`
+]
 function setSIZE() {
 	siz.textContent = size;
 }
 inp[1].value = usersize;
 function setTop() {
-	if (size === 0) document.getElementById("topval").innerText = "NULL";
+	if (size === 0)
+		document.getElementById("topval").textContent = "NULL";
 	else
-		document.getElementById("topval").innerText =
-			document.getElementById(
-				"canvas",
-			).firstElementChild.firstElementChild.innerText;
+		document.getElementById("topval").textContent = ul.firstElementChild.innerText;
 }
 function pop() {
-	if (size === 0) {
+	if (size === 0 && document
+		.getElementById("error").innerHTML === `&nbsp;`) {
 		document
 			.getElementById("error")
 			.appendChild(document.createTextNode("STACK underflow!"));
 		return;
 	}
-	code.innerText = `void pop() {
-        if (size == 0 && head == NULL) {
-            cerr << "STACK underflow!";
-            return;
-        }
-        else {// size is greater then 1 or not empty
-            int res = head->data;
-            Node *temp = head;
-            head = head->next;
-    delete temp;
-	size--;
-    }
-}`
-	document.getElementById("error").textContent = "";
+
+	if (queuetype[0].checked) {
+		code.innerHTML = codesstr[1]
+	} else {
+		code.innerHTML = codesstr[3]
+	}
+	const val = ul.firstElementChild.textContent;
+	caption.innerHTML = `<i>${val}</i> is Popped`
+	document.getElementById("error").innerHTML = `&nbsp;`;
 	size -= 1;
 	ul.firstElementChild.classList.remove("show");
 	setTimeout(() => {
@@ -47,24 +96,28 @@ function pop() {
 }
 function push() {
 	if (size >= usersize) {
-		document
-			.getElementById("error")
-			.appendChild(document.createTextNode("STACK Overflow!"));
+		if (document.getElementById("error").innerHTML === `&nbsp;`) {
+			document
+				.getElementById("error")
+				.appendChild(document.createTextNode("STACK Overflow!"));
+				caption.innerText = "STACK Overflow!";
+		}
 		return;
 	}
 	const val = inp[0].value;
-	code.innerHTML = `void push(int value=<span style="color: red">${val}</span>) {<br>
-        Node *new_node = new Node(value=<span style="color: red">${val}</span>);<br>
-        if (head == NULL) {<br>
-            head = new_node;<br>
-        }<br>
-        else {<br>
-            new_node->next = head;<br>
-            head = new_node;<br>
-        }<br>
-        size++;<br>
-    }<br>`
-	document.getElementById("error").textContent = "";
+	if (val == "") {
+		alert("Please enter a value")
+		caption.innerText = "Please enter a value"
+		return;
+	}
+	if (queuetype[0].checked) {
+		code.innerHTML = codesstr[0]
+	} else {
+		code.innerHTML = codesstr[2]
+	}
+	caption.innerHTML = `<i>${val}</i> is Pushed`
+	document.getElementById("value").innerText = val;
+	document.getElementById("error").innerHTML = `&nbsp;`;
 	inp[0].value = "";
 	console.log(val);
 	const li = document.createElement("li");

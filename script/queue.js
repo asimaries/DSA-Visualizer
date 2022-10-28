@@ -5,57 +5,52 @@ const inp = document.getElementsByTagName("input");
 const queuetype = document.getElementsByName('queuetype');
 const code = document.getElementsByTagName('code')[0];
 const caption = document.getElementById('caption');
+const errer = document.getElementById('error');
 const tab = `&nbsp;&nbsp;&nbsp;&nbsp;`;
 let codesstr = [
-	`void enque(Type value=(<span id="value"></span>)) {
-<br> ${tab}	// <i>cap</i> is capacity of <i>QUEUE</i>
-<br>        if (size == cap) {
-<br>            return;
-<br>        }
-<br>        else {
-<br>        arr[(((front + size++ - 1) % cap) + 1) % cap] = x;
-<br>        }
-<br>    }`,
-	`void deque() {
-<br>		// <i>cap</i> is capacity of <i>QUEUE</i>
-<br>		if (size == 0) {
-<br>			return;
-<br>        }
-<br>        else {
-<br>            front = (front + 1) % cap;
-<br>            size--;
-<br>        }
-<br>    }`,
-	`void enque(Type value=(<span id="value"></span>)){
-<br>        Node *new_node = new Node(value);
-<br>        if (head == NULL)
-<br>        {
-<br>            // Node* new_node = new Node(x);
-<br>            head = new_node;
-<br>            tail = new_node;
-<br>        }
-<br>        else
-<br>        {
-<br>            tail->next = new_node;
-<br>            tail = new_node;
-<br>        }
-<br>        size++;
-<br>    }`,
-	`void deque()
-<br>    {
-<br>        if (head == NULL)
-<br>        {
-<br>            return;
-<br>        }
-<br>        else
-<br>        {
-<br>            Node *temp = head;
-<br>            head = head->next;
-<br>            delete temp;
-<br>            size--;
-<br>        }
-<br>    }`
-]
+`void enque(Type value=(<mark id="value"></mark>)) {
+<br>${tab}// <i>cap</i> is capacity of <i>QUEUE</i>
+<br>${tab}if (size == cap) {
+<br>${tab}${tab}return;
+<br>${tab}}
+<br>${tab}else {
+<br>${tab}${tab}arr[(((front + size++ - 1) % cap) + 1) % cap] = x;
+<br>${tab}}
+<br>}`,
+`void deque() {
+<br>${tab}// <i>cap</i> is capacity of <i>QUEUE</i>
+<br>${tab}if (size == 0) {
+<br>${tab}${tab}return;
+<br>${tab}}
+<br>${tab}else {
+<br>${tab}${tab}front = (front + 1) % cap;
+<br>${tab}${tab}size--;
+<br>${tab}}
+<br>}`,
+`void enque(Type value=(<mark id="value"></mark>)){
+<br>${tab}Node *new_node = new Node(value);
+<br>${tab}if (head == NULL){
+<br>${tab}${tab}head = new_node;
+<br>${tab}${tab}tail = new_node;
+<br>${tab}}
+<br>${tab}else{
+<br>${tab}${tab}tail->next = new_node;
+<br>${tab}${tab}tail = new_node;
+<br>${tab}}
+<br>${tab}size++;
+<br>}`,
+`void deque(){
+<br>${tab}if (head == NULL){
+<br>${tab}${tab}return;
+<br>${tab}}
+<br>${tab}else{
+<br>${tab}${tab}Node *temp = head;
+<br>${tab}${tab}head = head->next;
+<br>${tab}${tab}delete temp;
+<br>${tab}${tab}size--;
+<br>${tab}}
+<br>}`
+]	
 let size = 3, usersize = 10;
 let element = `<span class="arrow"></span>
 			<span class="ele"></span>`;
@@ -76,11 +71,8 @@ function userSETsize() {
 }
 function push() {
 	if (size === usersize) {
-		document
-			.getElementById("error")
-			.appendChild(
-				document.createTextNode("QUEUE Overflow!"),
-			);
+		if ( errer.innerHTML === `&nbsp;`)
+		errer.appendChild(document.createTextNode("QUEUE Overflow!"));
 		return;
 	}
 
@@ -91,7 +83,7 @@ function push() {
 		return;
 	}
 
-	document.getElementById("error").textContent = "";
+	errer.innerHTML = `&nbsp;`;
 	if (queuetype[0].checked) {
 		code.innerHTML = codesstr[0]
 	} else {
@@ -114,8 +106,8 @@ function push() {
 }
 
 function pop() {
-	if (size === 0) {
-		document.getElementById("error").appendChild(
+	if (size === 0  && errer.innerHTML === `&nbsp;`) {
+		errer.appendChild(
 			document.createTextNode("QUEUE is alreay EMPTY!"),
 		);
 		return;
@@ -127,7 +119,7 @@ function pop() {
 	}
 	const val = document.getElementsByClassName("ele")[0].innerText;
 	caption.innerHTML = `<i>${val}</i> is Dequeued`
-	document.getElementById("error").textContent = "";
+	errer.innerHTML = `&nbsp;`;
 	ul.firstElementChild.classList.remove("show");
 	setTimeout(() => {
 		ul.firstElementChild.remove();

@@ -14,30 +14,50 @@
         <h1>STACK</h1>
     </header>
     <main>
-        <span id="canvas">
+        <div id="canvas">
             <ul class="fade">
                 <li class="show">23</li>
                 <li class="show">2</li>
                 <li class="show">67</li>
             </ul>
-        </span>
+        </div>
 
-        
-        <span id="control">
-            <input type="text">
-            <button type="button" onclick="push()">PUSH</button><br>
-            <button type="button" onclick="pop()">POP</button>
-            <div id="top">TOP: <span id="topval">23</span></div>
-            <div>SIZE: <span id="size">3</span></div>
-            <div>ERROR:<span id="error"></span></div>
-            <div>SET SIZE: <input type="text" /></div>
-            <h4>CODE:</h4>
-            <code>---</code>
-        </span>
+
+        <div id="control">
+            <div class="controlchild">
+                <span style="margin-right:3%">
+                    <button type="submit" onclick="push()">PUSH</button><br>
+                    <button type="button" onclick="pop()">POP</button><br>
+                    <h3>TOP: </h3>
+                    <h3>SIZE:</h3>
+                    <h3>ERROR: </h3>
+                    <h3>SET SIZE: </h3>
+                </span>
+                <span>
+                    <input type="text" />
+                    <h3 id="topval">23</h3>
+                    <h3 id="size">3</h3>
+                    <h3 id="error">&nbsp;</h3>
+                    <input type="text" />
+                </span>
+            </div>
+            <div>
+                <h3>CODE: &nbsp;&nbsp;&nbsp;
+                    <label for="array">
+                    <input type="radio" name="queuetype" id="array" checked="checked">
+                    Array
+                </label>
+                <label for="linkedlist">
+                    <input type="radio" name="queuetype" id="linkedlist">
+                    Linked List
+                </label></h3>
+                <code>---</code>
+            </div>
+        </div>
 
     </main>
     <footer>
-        <h4>STATUS:&nbsp;</h4>
+        <h3>STATUS:&nbsp;</h3>
         <span id="caption">---</span>
     </footer>
     <script src="script/stack.js"></script>

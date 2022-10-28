@@ -38,29 +38,30 @@
 			<span class="controlchild" style="width: 7%; padding-right:0;">
 				<button type="submit" onclick="push()">PUSH</button><br>
 				<button type="button" onclick="pop()">POP</button><br>
-				<label for="top">FRONT:</label><br>
-				<label for="top">REAR: </label><br>
-				<span>SIZE:</span><br>
-				<span>ERROR: </span><br>
-				<span>SET SIZE: </span>
+				<h3>FRONT:</h3>
+				<h3>REAR: </h3>
+				<h3>SIZE:</h3>
+				<h3>ERROR: </h3>
+				<h3>SET SIZE: </h3>
 			</span>
-			<span style="padding:2em;  padding-left:0">
-				<input type="text" style="margin-bottom: 4em;" /><br>
-				<span id="frontval">87</span><br>
-				<span id="backval">34</span><br>
-				<span id="size">3</span><br>
-				<span id="error"></span>
-				<input type="text" style="margin-top: 1em;" />
+			<span style="width:50%; padding:2rem;  padding-left:1rem">
+				<input type="text" />
+				<h3 id="frontval">87</h3>
+				<h3 id="backval">34</h3>
+				<h3 id="size">3</h3>
+				<h3 id="error">&nbsp;</h3>
+				<input type="text" />
 			</span>
-			<span class="controlchild " style="margin-left: 20%;">
-				<label for="array">
-					<input type="radio" name="queuetype" id="array" checked="checked">
-					Array
-				</label>
-				<label for="linkedlist">
-					<input type="radio" name="queuetype" id="linkedlist">
-					Linked List
-				</label><br>
+			<span class="controlchild ">
+				<h3>CODE: &nbsp;&nbsp;&nbsp;
+                    <label for="array">
+                    <input type="radio" name="queuetype" id="array" checked="checked">
+                    Array
+                </label>
+                <label for="linkedlist">
+                    <input type="radio" name="queuetype" id="linkedlist">
+                    Linked List
+                </label></h3>
 				<code>---</code>
 			</span>
 		</div>

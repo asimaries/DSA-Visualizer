@@ -19,7 +19,7 @@ header {
 .canvas {
     padding: 3%;
     margin: auto;
-    height: 200px;
+    height: 150px;
     background-color: #ccc;
     display: flex;
     align-items: center;
@@ -38,7 +38,6 @@ main {
     background-color: #333;
     height: fit-content;
     display: flex;
-    font-weight: bold;
 }
 
 .controlchild {
@@ -78,7 +77,9 @@ input[type=text] {
     border-radius: 10px;
     height: 2rem;
     width: 10rem;
-    margin-top: .3em;
+}
+input[type=text]:first-child {
+    margin-bottom: 3.2rem; margin-top: .3rem;
 }
 .arrow {
     width: 30px;
@@ -147,4 +148,17 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+h3{
+	margin:  0.5rem 0;
+}
+code{
+    font-size: 16px;
+}
+#value{
+	font-weight: bolder;
+}
+mark{
+	background-color: #ffffffaf;
+	color: red;
 }
