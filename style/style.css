@@ -13,7 +13,7 @@ html {
 }
 
 header {
-    height: 100px;
+    height: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,9 +49,21 @@ img{
     max-height: 200px;
     width: 100%;
 }
+.card:hover{
+    transition: 500ms;
+    scale: 1.03;
+}
+.card:hover > a > div > img{
+    transition: 500ms;
+    scale: 1.03;
+    color: rgb(255, 34, 0);
+}
 footer {
     text-align: center;
 }
 p{
     font-weight: bold;
+}
+main > h2{
+    padding: 10px 0;
 }

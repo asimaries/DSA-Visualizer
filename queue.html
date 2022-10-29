@@ -38,9 +38,9 @@
 		</div>
 
 		<div class="control">
-			<span class="controlchild" style="width: 7%; padding-right:0;">
-				<button type="submit" onclick="push()">PUSH</button><br>
-				<button type="button" onclick="pop()">POP</button><br>
+			<span class="controlchild" style="width: 15%; padding-right:0;">
+				<button type="submit" onclick="push()">ENQUEUE</button><br>
+				<button type="button" onclick="pop()">DEQUEUE</button><br>
 				<h3>FRONT:</h3>
 				<h3>REAR: </h3>
 				<h3>SIZE:</h3>
@@ -48,7 +48,7 @@
 				<h3>SET SIZE: </h3>
 			</span>
 			<span style="width:50%; padding:2rem;  padding-left:1rem">
-				<input type="text" />
+				<input type="number" />
 				<h3 id="frontval">87</h3>
 				<h3 id="backval">34</h3>
 				<h3 id="size">3</h3>
@@ -71,8 +71,8 @@
 		</div>
 	</main>
 	<footer>
-		<h4>STATUS:&nbsp;</h4>
-		<span id="caption">---sdff</span>
+		<h3>STATUS:&nbsp;</h3>
+		<span id="caption">---</span>
 	</footer>
 
 	<script src="script/queue.js"></script>

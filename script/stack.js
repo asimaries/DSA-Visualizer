@@ -7,58 +7,47 @@ const code = document.getElementsByTagName('code')[0];
 const caption = document.getElementById('caption');
 const tab = `&nbsp;&nbsp;&nbsp;&nbsp;`;
 let codesstr = [
-	`void push(Type value=(<mark id="value"></mark>))
-    {
-        if (top == cap - 1)
-        {
-            cout << "Overflow " << x << " cannot be push\n";
-        }
-        else
-        {
-            arr[++top] = x;
-        }
-    }`,
-	`void pop()
-    {
-        if (top == -1)
-        {
-            cout << "underflow\n";
-        }
-        else
-        {
-            arr[top--] = 0;
-        }
-    }`,
-	` void push(Type value=(<mark id="value"></mark>))
-    {
-        Node *new_node = new Node(x);
-        if (head == NULL)
-        {
-            head = new_node;
-        }
-        else
-        {
-            new_node->next = head;
-            head = new_node;
-        }
-        size++;
-    }`,
-	`void pop()
-    {
-        if (size == 0 && head == NULL)
-        {
-            cout << "underflow: stack is empty ";
-            return 0;
-        }
-        else
-        {
-            Node *temp = head;
-            head = head->next;
-            delete temp;
-            size--;
-        }
-    }`
-]
+	`void push(Type value=(<mark id="value"></mark>)) {
+	<br>${tab}if (top == cap - 1) {
+	<br>${tab}${tab}cout << "Overflow " << x << " cannot be push\n";
+	<br>${tab}}
+	<br>${tab}else {
+	<br>${tab}${tab}arr[++top] = x;
+	<br>${tab}}
+	<br>}`,
+	`void pop() {
+	<br>${tab}if (top == -1) {
+	<br>${tab}${tab}cout << "underflow\n";
+	<br>${tab}}
+	<br>${tab}else {
+	<br>${tab}${tab}arr[top--] = 0;
+	<br>${tab}}
+	<br>}`,
+	`void push(Type value=(<mark id="value"></mark>)) {
+	<br>${tab}Node *new_node = new Node(x);
+	<br>${tab}if (head == NULL) {
+	<br>${tab}${tab}head = new_node;
+	<br>${tab}}
+	<br>${tab}else {
+	<br>${tab}${tab}new_node->next = head;
+	<br>${tab}${tab}head = new_node;
+	<br>${tab}}
+	<br>${tab}size++;
+	<br>}`,
+	`void pop() {
+	<br>${tab}if (size == 0 && head == NULL) {
+	<br>${tab}${tab}cout << "underflow: stack is empty ";
+	<br>${tab}${tab}return 0;
+	<br>${tab}}
+	<br>${tab}else {
+	<br>${tab}${tab}Node *temp = head;
+	<br>${tab}${tab}head = head->next;
+	<br>${tab}${tab}delete temp;
+	<br>${tab}${tab}size--;
+	<br>${tab}}
+	<br>}`
+	]
+	
 function setSIZE() {
 	siz.textContent = size;
 }
@@ -100,7 +89,7 @@ function push() {
 			document
 				.getElementById("error")
 				.appendChild(document.createTextNode("STACK Overflow!"));
-				caption.innerText = "STACK Overflow!";
+			caption.innerText = "STACK Overflow!";
 		}
 		return;
 	}
@@ -143,3 +132,4 @@ inp[1].addEventListener("keypress", (event) => {
 		userSETsize();
 	}
 });
+

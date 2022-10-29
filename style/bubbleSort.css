@@ -61,7 +61,7 @@ button {
     margin: .5em 0em;
 }
 button:hover{
-    transition: 500ms;
+    transition: 300ms;
     background-color: #fff;
     color: #111;
 }
@@ -70,14 +70,21 @@ button:disabled{
 }
 
 input {
+    outline: none;
     background-color: white;
     color: black;
     border-radius: 10px;
     height: 2rem;
     width: 10rem;
+    padding: 12px;
+    font-size: large;
 }
 img{
 	width: 20px;
+}
+img:hover{
+    transition: 500ms;
+    scale: 1.2;
 }
 #homepage{
 	position: absolute;

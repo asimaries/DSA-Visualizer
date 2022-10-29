@@ -1,6 +1,7 @@
 const container = document.getElementById("array");
 const play = document.getElementById("play");
 const pause = document.getElementById("pause");
+const start = document.getElementById("start");
 const inp = document.getElementsByTagName('input');
 let size = 15;
 let arr = [];
@@ -17,13 +18,14 @@ function setSize() {
 function generatearray() {
 	arr = arr.filter((x) => { return x > 0 })
 	pause.setAttribute("disabled", "true")
+	start.removeAttribute("disabled")
 	play.setAttribute("disabled", "true")
 	container.innerHTML = ``;
 	size = inp[1].value = arr.length;
 	let extra = 10;
 	for (let i in arr) {
 		let ht = arr[i];
-		if (ht > 100) { ht = 100 + extra;}
+		if (ht > 100) { ht = 100 + extra; }
 		const array_ele = document.createElement("div");
 		array_ele.classList.add("block");
 		array_ele.style.height = `${ht * 3}px`;
@@ -76,15 +78,15 @@ function pauser() {
 	})
 }
 async function BubbleSort(delay = 100) {
-
+	start.setAttribute("disabled", "true");
 	pause.removeAttribute("disabled");
 	let blocks = document.querySelectorAll(".block");
 	for (let i = 0; i < blocks.length; i += 1) {
 		for (let j = 0; j < blocks.length - i - 1; j += 1) {
 
-			blocks[j].style.backgroundColor = "#ff0000";
+			blocks[j].style.backgroundColor = "#f00";
 			if (wait) await pauser();
-			blocks[j + 1].style.backgroundColor = "#ff0000";
+			blocks[j + 1].style.backgroundColor = "#f00";
 
 			await new Promise((resolve) =>
 				setTimeout(() => {
@@ -104,8 +106,41 @@ async function BubbleSort(delay = 100) {
 			blocks[j + 1].style.backgroundColor = "#3c80c0";
 		}
 
-		blocks[blocks.length - i - 1]
-			.style.backgroundColor = "#0f0";
+		blocks[blocks.length - i - 1].style.backgroundColor = "rgb(0, 255, 94)";
+	}
+}
+
+async function InsertionSort(delay = 100) {
+
+	pause.removeAttribute("disabled");
+	let blocks = document.querySelectorAll(".block");
+	let j, key;
+	for (let i = 1; i < blocks.length; i += 1) {
+		key = blocks[i];
+		j = i - 1;
+		blocks[i].style.backgroundColor = "rgb(202, 51, 51)";
+		blocks[j].style.backgroundColor = "#00ff00";
+		while (j >= 0 && blocks[j] > key) {
+
+			if (wait) await pauser();
+
+			await new Promise((resolve) =>
+				setTimeout(() => {
+					resolve();
+				}, delay)
+			);
+			console.log("run");
+			const value1 = Number(blocks[j].childNodes[0].innerHTML);
+			const value2 = Number(blocks[j + 1].childNodes[0].innerHTML);
+			blocks[j + 1] = blocks[j];
+			j = j - 1;
+			blocks = document.querySelectorAll(".block");
+			blocks[j].style.backgroundColor = "#3c80c0";
+			blocks[j + 1].style.backgroundColor = "#3c80c0";
+		}
+
+		blocks[j + 1] = key;
+		blocks[i - 1].style.backgroundColor = "#0f0";
 	}
 }
 

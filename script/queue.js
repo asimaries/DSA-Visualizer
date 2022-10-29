@@ -27,23 +27,23 @@ let codesstr = [
 <br>${tab}${tab}size--;
 <br>${tab}}
 <br>}`,
-`void enque(Type value=(<mark id="value"></mark>)){
+`void enque(Type value=(<mark id="value"></mark>)) {
 <br>${tab}Node *new_node = new Node(value);
-<br>${tab}if (head == NULL){
+<br>${tab}if (head == NULL) {
 <br>${tab}${tab}head = new_node;
 <br>${tab}${tab}tail = new_node;
 <br>${tab}}
-<br>${tab}else{
+<br>${tab}else {
 <br>${tab}${tab}tail->next = new_node;
 <br>${tab}${tab}tail = new_node;
 <br>${tab}}
 <br>${tab}size++;
 <br>}`,
-`void deque(){
-<br>${tab}if (head == NULL){
+`void deque() {
+<br>${tab}if (head == NULL) {
 <br>${tab}${tab}return;
 <br>${tab}}
-<br>${tab}else{
+<br>${tab}else {
 <br>${tab}${tab}Node *temp = head;
 <br>${tab}${tab}head = head->next;
 <br>${tab}${tab}delete temp;
