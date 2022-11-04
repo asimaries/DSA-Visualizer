@@ -3,10 +3,14 @@
     padding: 0;
     color: white;
     border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
     background-color: #111;
+}
+body{
+    height: 100vh;
 }
 
 header {
@@ -19,7 +23,7 @@ header {
 .canvas {
     padding: 3%;
     margin: auto;
-    height: 13rem;
+    height: 25vh;
     background-color: #eee;
     display: flex;
     align-items: center;
@@ -36,7 +40,7 @@ main {
 
 .control {
     background-color: #333;
-    height: 23rem;
+    /* height:; */
     display: flex;
 }
 
@@ -95,7 +99,7 @@ input:first-child {
 .arrow {
     width: 30px;
     height: 5px;
-    border-radius: 4px 0px 0px 4px;
+    border-radius: 5px 0px 0px 5px;
     background-color: #000;
     position: relative;
 }

@@ -4,9 +4,14 @@
 	box-sizing: border-box;
     border-style: none;
     color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 html{
     background-color: #111;
+}
+body{
+    height:100vh;
 }
 header {
     display: flex;
@@ -30,10 +35,11 @@ main{
 }
 #control{
     float: left;
-    height: 250px;
+    height: max-content;
     width: 100%;
     background-color: #333;
     padding: 2rem;
+    display: flex;
 }
 
 .block {
@@ -79,6 +85,15 @@ input {
     padding: 12px;
     font-size: large;
 }
+input[type=range]{
+    position: relative;
+    top: 9px;
+    padding: 0;
+}
+#slider>label{
+    font-size: large;
+    font-weight: 600;
+}
 img{
 	width: 20px;
 }
@@ -89,4 +104,16 @@ img:hover{
 #homepage{
 	position: absolute;
 	left: 15px;
+}
+.controlchild{
+    width: 50%;
+}
+li{
+    list-style: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+li.current{
+    width: max-content;
+    background-color: rgb(225, 255, 0,0.2);
+    font-weight: 600;
 }

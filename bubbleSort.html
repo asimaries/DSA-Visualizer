@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/bubbleSort.css" />
+    <link rel="icon" type="image/x-icon" href="assects\sort.png">
+
     <title>Bubble Sort</title>
 </head>
 
@@ -20,17 +22,35 @@
         <div id="array"></div>
         <div style="height: 2rem;"></div>
         <div id="control">
-            <button type="button" onclick="createArray()">CREATE ARRAY</button>
-            <input type="text" style="width:20rem;"><br>
-            <button type="button" onclick="setSize()">SET SIZE</button>
-            <input type="number" value="15"><br>
-            <button type="button" onclick="BubbleSort()" id="start">START</button>
-            <button type="button" onclick="generateRandomarray()">GENERATE</button><br>
-            <button type="button" id="play" disabled>PLAY</button>
-            <button type="button" id="pause" disabled>PAUSE</button>
+            <div class="controlchild">
+                <button type="button" onclick="createArray()">CREATE ARRAY</button>
+                <input type="text" style="width:20rem;"><br>
+                <button type="button" onclick="setSize()">SET SIZE</button>
+                <input type="number" value="15"><br>
+                <button type="button" onclick="BubbleSort()" id="start">START</button>
+                <button type="button" onclick="generateRandomarray()">GENERATE</button><br>
+                <button type="button" id="play" disabled>PLAY</button>
+                <button type="button" id="pause" disabled>PAUSE</button><br>
+                <div id="slider">
+                    <input type="range" name="speed" id="speed" min="0" max="1000" value="500" step="10">
+                    <label for="speed">SPEED: 0.5s</label>
+
+                </div>
+            </div>
+            <div class="controlchild">
+                <ul>
+
+                </ul>
+            </div>
         </div>
     </main>
-    <script src="script/bubbleSort.js"></script>
+    <script src="script/bubbleSort.js">
+
+        void bubbleSort()
+        {
+
+        }
+    </script>
 </body>
 
 </html>

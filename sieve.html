@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIEVE</title>
     <link rel="stylesheet" href="style/sieve.css">
+    <link rel="icon" type="image/x-icon" href="assects/sieve.png">
+
 </head>
 
 <body>
@@ -23,7 +25,10 @@
             <button type="submit" onclick="generate()">SET SIZE</button>
             <button type="button" onclick="sieve()" id="start">START</button>
             <button type="button" id="play" disabled>PLAY</button>
-            <button type="button" id="pause" disabled>PAUSE</button>
+            <button type="button" id="pause" disabled>PAUSE</button><br>
+            <label for="speed">SPEED: 0.5s</label>
+            <input type="range" name="speed" id="speed" min="0" max="1000" value="500" step="10">
+            <button type="button" id="skip">SKIP</button>
         </span>
     </main>
     <script src="script/sieve.js"></script>

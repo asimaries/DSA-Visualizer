@@ -4,7 +4,7 @@
     box-sizing: border-box;
     color: white;
     border: none;
-    /* font-family: "Comic Neue", sans-serif; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* font-style: normal;*/
 }
 
@@ -25,12 +25,13 @@ a {
 
 section {
     display: flex;
-    height: 40%;
+    height: auto;
 }
 
 body {
     margin: auto;
     width: 90%;
+    height: 100vh;
 }
 
 .card {
@@ -40,6 +41,7 @@ body {
     align-items: center;
     text-align: center;
     margin:0 auto;
+    padding:1% 0;
     width: 40%;
     height: 100%;
     border-radius: 2rem;

@@ -2,11 +2,15 @@
     padding: 0;
     margin: 0;
     border-style: none;
-    color: white;
+    color: white;    
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
     background-color: #111;
+}
+body{
+    height: 100vh;
 }
 header {
     display: flex;
@@ -44,13 +48,13 @@ main{
 }
 .whte{
     color: white;
-    opacity: 0.5;
+    opacity: 0.2;
 }
 .control{
     background-color: #aaa;
     padding: 10px;
     width: 200px;
-    max-height: 220px;
+    height: 40vh;
     border-radius: 1rem;
     margin: 100px auto;
 }
@@ -77,9 +81,12 @@ input {
     color: black;
     border-radius: 10px;
     height: 1rem;
-    width: 10rem;
+    width: 9rem;
     padding: 12px;
     font-size: large;
+}
+input[type="range"]{
+    padding:0;
 }
 img{
 	width: 20px;
@@ -91,4 +98,9 @@ img:hover{
 #homepage{
 	position: absolute;
 	left: 15px;
+}
+label{
+    font-size: large;
+    font-weight: 600;
+    color: black;
 }
