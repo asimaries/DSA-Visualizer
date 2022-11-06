@@ -7,10 +7,13 @@ const start = document.getElementById("start");
 const skip = document.getElementById("skip");
 let n = inp[0].value = 100;
 let delay = 500;
+rejectAndEnd = () => {}
 deley = document.querySelector('#speed').valueAsNumber;
 let wait = false;
 function setSize() {
     n = inp[0].value;
+    rejectAndEnd()
+    rejectAndEnd = () => {}
     generate();
 }
 function generate() {
@@ -35,13 +38,22 @@ function pauser() {
             play.setAttribute("disabled", "true")
             play.removeEventListener("click", playbuttonclick);
             wait = false;
-            resolve("resolved");
+            resolve(true);
+        }
+        rejectAndEnd = function () {
+          wait = false;
+          pause.removeAttribute("disabled")
+          play.setAttribute("disabled", "true")
+          play.removeEventListener("click", playbuttonclick)
+          resolve(false);
         }
         play.addEventListener("click", playbuttonclick)
         skip.addEventListener("click", playbuttonclick)
     })
 }
 async function sieve() {
+    rejectAndEnd()
+    rejectAndEnd = () => {}
     generate();
     start.setAttribute("disabled", "true");
     pause.removeAttribute("disabled");
@@ -65,7 +77,12 @@ async function sieve() {
                 setTimeout(() => {
                     res();
                 }, delay));
-            if (wait) await pauser();
+            if (wait) {
+                let _temp = await pauser();
+                if (!_temp) {
+                  return;
+                } 
+            }
             console.log(i, p)
             blockList[i - 1].style.backgroundColor = "grey";
             blockList[i - 1].classList.add("whte");
